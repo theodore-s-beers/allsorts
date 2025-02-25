@@ -18,7 +18,7 @@
     const payload = { items: lines, tailoring: sortingApproach };
 
     try {
-      const response = await fetch("http://localhost:8080/", {
+      const response = await fetch("https://feruca-api.fly.dev/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
