@@ -3,9 +3,11 @@
 
   let sortingInput = $state("");
   let sortingOutput = $state("");
-  let sortingApproach = $state("uca");
 
+  let sortingApproach = $state("uca");
   const validTailorings = ["uca", "ArabicScript", "ArabicInterleaved"];
+
+  const title = "Text Sorting Playground";
 
   async function sortItems() {
     sortingInput = sortingInput.trim().replace(/\n{2,}/g, "\n");
@@ -57,7 +59,24 @@
   });
 </script>
 
-<h1 class="mb-6 text-3xl">Text Sorting Playground</h1>
+<svelte:head>
+  <meta
+    name="description"
+    content="Try sorting text using different approaches—including mixing the Latin and Arabic scripts"
+  />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:url" content="https://www.theobeers.com/allsorts/" />
+  <meta property="og:image" content="https://www.theobeers.com/allsorts/og.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+
+  <title>{title}</title>
+</svelte:head>
+
+<h1 class="mb-6 text-3xl">{title}</h1>
 
 <div class="mb-4 flex gap-4">
   <textarea
