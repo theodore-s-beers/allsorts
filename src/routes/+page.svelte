@@ -76,7 +76,24 @@
   <title>{title}</title>
 </svelte:head>
 
-<h1 class="mb-6 text-3xl">{title}</h1>
+<h1 class="mb-4 text-3xl">{title}</h1>
+
+<p class="mb-4">
+  <em
+    >Based on <a
+      href="https://github.com/theodore-s-beers/feruca"
+      rel="noreferrer"
+      target="_blank"
+      class="text-blue-800 hover:underline">feruca</a
+    >, a simple but conformant & performant implementation of the
+    <a
+      href="https://www.unicode.org/reports/tr10/"
+      rel="noreferrer"
+      target="_blank"
+      class="text-blue-800 hover:underline">Unicode Collation Algorithm</a
+    >, written in safe Rust with minimal dependencies. Give it a try some time!</em
+  >
+</p>
 
 <div class="mb-4 flex gap-4">
   <textarea
