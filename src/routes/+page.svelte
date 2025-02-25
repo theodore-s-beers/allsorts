@@ -51,6 +51,7 @@
   function clearItems() {
     sortingInput = "";
     sortingOutput = "";
+    localStorage.removeItem("allsorts-input");
   }
 
   onMount(() => {
