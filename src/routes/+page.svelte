@@ -10,6 +10,7 @@
   async function sortItems() {
     sortingInput = sortingInput.trim().replace(/\n{2,}/g, "\n");
     const lines = sortingInput.split("\n").map((line) => line.trim());
+    sortingInput = lines.join("\n");
 
     localStorage.setItem("allsorts-input", sortingInput);
     localStorage.setItem("allsorts-approach", sortingApproach);
