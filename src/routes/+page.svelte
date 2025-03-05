@@ -11,6 +11,8 @@
   const title = "Text Sorting Playground";
 
   async function sortItems() {
+    sortingOutput = "Sorting...";
+
     sortingInput = sortingInput.trim().replace(/\n{2,}/g, "\n");
     const lines = sortingInput.split("\n").map((line) => line.trim());
     sortingInput = lines.join("\n");
@@ -45,6 +47,7 @@
       } else {
         console.error(err);
       }
+
       sortingOutput = "An error occurred with the sorting API request. Please try again.";
     }
   }
