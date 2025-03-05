@@ -79,7 +79,7 @@
 
 <h1 class="mb-4 text-3xl">{title}</h1>
 
-<p class="mb-4">
+<p class="mb-4 hyphens-auto">
   <em
     >Based on <a
       href="https://github.com/theodore-s-beers/feruca"
@@ -96,34 +96,37 @@
   >
 </p>
 
-<div class="mb-4 flex gap-4">
+<div class="mb-4 flex flex-col gap-4 md:flex-row">
   <textarea
     bind:value={sortingInput}
-    rows="20"
+    rows="16"
     placeholder="Enter items to be sorted here, one per line"
     class="grow rounded border bg-white p-2"
   ></textarea>
 
-  <textarea bind:value={sortingOutput} rows="20" readonly class="grow rounded border bg-white p-2"
+  <textarea bind:value={sortingOutput} rows="16" readonly class="grow rounded border bg-white p-2"
   ></textarea>
 </div>
 
-<div class="flex items-center">
-  <button onclick={sortItems} class="mr-4 cursor-pointer rounded bg-blue-700 px-3 py-2 text-white"
-    >Sort</button
-  >
+<div class="flex flex-col gap-4 md:flex-row">
+  <div class="flex gap-4">
+    <button onclick={sortItems} class="cursor-pointer rounded bg-blue-700 px-3 py-2 text-white"
+      >Sort</button
+    >
+    <button onclick={clearItems} class="cursor-pointer rounded bg-gray-600 px-3 py-2 text-white"
+      >Clear</button
+    >
+  </div>
 
-  <button onclick={clearItems} class="mr-4 cursor-pointer rounded bg-gray-600 px-3 py-2 text-white"
-    >Clear</button
-  >
+  <div class="flex items-center gap-2">
+    <label for="approach-select">Sorting approach:</label>
+    <select bind:value={sortingApproach} id="approach-select" class="rounded border bg-white p-2">
+      <option value="naive">Naïve</option>
+      <option value="uca" selected>UCA default</option>
+      <option value="ArabicScript">Arabic first</option>
+      <option value="ArabicInterleaved">Arabic interleaved</option>
+    </select>
+  </div>
 
-  <div class="mr-2">Sorting approach:</div>
-  <select bind:value={sortingApproach} class="rounded border bg-white p-2">
-    <option value="naive">Naïve</option>
-    <option value="uca" selected>UCA default</option>
-    <option value="ArabicScript">Arabic first</option>
-    <option value="ArabicInterleaved">Arabic interleaved</option>
-  </select>
-
-  <button class="ml-auto cursor-pointer rounded bg-green-800 px-3 py-2 text-white">Copy</button>
+  <button class="w-16 cursor-pointer rounded bg-green-800 py-2 text-white md:ml-auto">Copy</button>
 </div>
