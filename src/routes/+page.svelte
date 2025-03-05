@@ -54,6 +54,18 @@
     localStorage.removeItem("allsorts-input");
   }
 
+  async function copyOutput() {
+    try {
+      await navigator.clipboard.writeText(sortingOutput);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        console.error(err.message);
+      } else {
+        console.error(err);
+      }
+    }
+  }
+
   onMount(() => {
     sortingInput = localStorage.getItem("allsorts-input") || "";
     sortingApproach = localStorage.getItem("allsorts-approach") || "uca";
@@ -128,5 +140,8 @@
     </select>
   </div>
 
-  <button class="w-16 cursor-pointer rounded bg-green-800 py-2 text-white md:ml-auto">Copy</button>
+  <button
+    onclick={copyOutput}
+    class="w-16 cursor-pointer rounded bg-green-800 py-2 text-white md:ml-auto">Copy</button
+  >
 </div>
