@@ -3,6 +3,7 @@
 
   let sortingInput = $state("");
   let sortingOutput = $state("");
+  let outputElement: HTMLTextAreaElement;
 
   let sortingApproach = $state("uca");
   const validTailorings = ["uca", "ArabicScript", "ArabicInterleaved"];
@@ -57,6 +58,7 @@
   async function copyOutput() {
     try {
       await navigator.clipboard.writeText(sortingOutput);
+      outputElement.focus();
     } catch (err: unknown) {
       if (err instanceof Error) {
         console.error(err.message);
@@ -116,7 +118,12 @@
     class="grow rounded border bg-white p-2"
   ></textarea>
 
-  <textarea bind:value={sortingOutput} rows="16" readonly class="grow rounded border bg-white p-2"
+  <textarea
+    bind:this={outputElement}
+    bind:value={sortingOutput}
+    rows="16"
+    readonly
+    class="grow rounded border bg-white p-2"
   ></textarea>
 </div>
 
