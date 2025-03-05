@@ -11,8 +11,6 @@
   const title = "Text Sorting Playground";
 
   async function sortItems() {
-    sortingOutput = "Sorting...";
-
     sortingInput = sortingInput.trim().replace(/\n{2,}/g, "\n");
     const lines = sortingInput.split("\n").map((line) => line.trim());
     sortingInput = lines.join("\n");
@@ -25,6 +23,8 @@
       sortingOutput = lines.join("\n");
       return;
     }
+
+    sortingOutput = "Sorting...";
 
     const payload = { items: lines, tailoring: sortingApproach };
 
