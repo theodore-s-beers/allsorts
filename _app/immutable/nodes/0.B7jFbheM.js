@@ -1,0 +1,1 @@
+import"../chunks/DsnmJJEf.js";import{f as a,s as n,a as s,c as l,b as i}from"../chunks/B2pVrRxf.js";const p=!0,u=Object.freeze(Object.defineProperty({__proto__:null,prerender:p},Symbol.toStringTag,{value:"Module"}));var c=a('<div class="mx-auto max-w-4xl p-4"><!></div>');function v(o,r){var e=c(),t=l(e);n(t,()=>r.children),i(e),s(o,e)}export{v as component,u as universal};
