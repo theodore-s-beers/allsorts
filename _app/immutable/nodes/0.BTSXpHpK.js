@@ -1,0 +1,1 @@
+import{A as e,H as t,V as n,d as r,g as i,m as a}from"../chunks/0L0rovqQ.js";import"../chunks/DEDqjojZ.js";var o=t({prerender:()=>!0}),s=i(`<div class="mx-auto max-w-4xl p-4"><!></div>`);function c(t,i){var o=s();r(e(o),()=>i.children),n(o),a(t,o)}export{c as component,o as universal};
