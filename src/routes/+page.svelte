@@ -118,16 +118,14 @@
 		bind:value={sortingInput}
 		rows="16"
 		placeholder="Enter items to be sorted here, one per line"
-		class="grow rounded border bg-white p-2"
-	></textarea>
+		class="grow rounded border bg-white p-2"></textarea>
 
 	<textarea
 		bind:this={outputElement}
 		bind:value={sortingOutput}
 		rows="16"
 		readonly
-		class="grow rounded border bg-white p-2"
-	></textarea>
+		class="grow rounded border bg-white p-2"></textarea>
 </div>
 
 <div class="flex flex-col gap-4 md:flex-row">
